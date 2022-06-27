@@ -16,4 +16,18 @@ const resetBtnEl = document.getElementById('resetBtn');
 rollBtnEl.addEventListener('click', function () {
   const randomNumber = Math.floor(Math.random() * 6) + 1;
   console.log(randomNumber);
+
+  // 1. Find out  which players turn it is
+  if (player1Turn) {
+    console.log('player 1 rolled ' + randomNumber);
+  } else {
+    console.log('player 2 rolled ' + randomNumber);
+  }
+  // 2. log out the value e.g "Player 1 rolled 5"
+  // 3. switch the turn back to the other player
+  if (player1Turn) {
+    player1Turn = false;
+  } else {
+    player1Turn = true;
+  }
 });
