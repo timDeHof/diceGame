@@ -11,6 +11,7 @@ const player1DiceEl = document.getElementById('player1Dice');
 const player2DiceEl = document.getElementById('player2Dice');
 const rollBtnEl = document.getElementById('rollBtn');
 const resetBtnEl = document.getElementById('resetBtn');
+const doubleBtnEl = document.getElementById('doubleBtn');
 
 function showDisplayButton() {
   rollBtnEl.style.display = 'none';
@@ -19,13 +20,12 @@ function showDisplayButton() {
 /* Hook up a click event listener to the Roll Dice Button. Log out a random number between 1 and 6. Hint: use Math.floor() and Math.random() */
 rollBtnEl.addEventListener('click', function () {
   const randomNumber = Math.floor(Math.random() * 6) + 1;
-  console.log(randomNumber);
 
   // 1. Update the scores for each player
   // 2. Display the scores in their scoreboards
   if (player1Turn) {
     player1DiceEl.style.background =
-      'url(assects/dice_' + randomNumber + '.png) center';
+      'url(assets/dice_' + randomNumber + '.png) center';
     player1Score += parseInt(randomNumber);
     player1ScoreEl.textContent = player1Score;
     player1DiceEl.classList.remove('active');
@@ -33,7 +33,7 @@ rollBtnEl.addEventListener('click', function () {
     messageEl.textContent = 'Player 2 Turn';
   } else {
     player2DiceEl.style.background =
-      'url(assects/dice_' + randomNumber + '.png) center';
+      'url(assets/dice_' + randomNumber + '.png) center';
     player2Score += parseInt(randomNumber);
     player2ScoreEl.textContent = player2Score;
     player2DiceEl.classList.remove('active');
@@ -56,12 +56,13 @@ rollBtnEl.addEventListener('click', function () {
     player1Turn = true;
   }
 });
+
 function resetGame() {
   messageEl.textContent = 'player 1 turn';
   player1ScoreEl.textContent = 0;
   player2ScoreEl.textContent = 0;
-  player1DiceEl.style.background = 'url(assects/dice_1.png) center';
-  player2DiceEl.style.background = 'url(assects/dice_1.png) center';
+  player1DiceEl.style.background = 'url(assets/dice_1.png) center';
+  player2DiceEl.style.background = 'url(assets/dice_1.png) center';
   player1Score = 0;
   player2Score = 0;
   player1Turn = true;
@@ -75,4 +76,9 @@ function resetGame() {
 // 3. Invoke the reset() function when the Reset button is clicked
 resetBtnEl.addEventListener('click', function () {
   resetGame();
+});
+
+function doublePts() {}
+doubleBtnEl.addEventListener('click', function () {
+  doublePts();
 });

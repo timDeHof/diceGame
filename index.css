@@ -35,7 +35,7 @@ body {
     border-radius: 10px;
     width: 100px;
     height: 100px;
-    background: url(assects/dice_1.png) center;
+    background: url(assets/dice_1.png) center;
     margin: 0 auto;
     font-size: 80px;
     display: flex;
