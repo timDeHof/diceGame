@@ -24,14 +24,16 @@ rollBtnEl.addEventListener('click', function () {
   // 1. Update the scores for each player
   // 2. Display the scores in their scoreboards
   if (player1Turn) {
-    player1DiceEl.textContent = randomNumber;
+    player1DiceEl.style.background =
+      'url(assects/dice_' + randomNumber + '.png) center';
     player1Score += parseInt(randomNumber);
     player1ScoreEl.textContent = player1Score;
     player1DiceEl.classList.remove('active');
     player2DiceEl.classList.add('active');
     messageEl.textContent = 'Player 2 Turn';
   } else {
-    player2DiceEl.textContent = randomNumber;
+    player2DiceEl.style.background =
+      'url(assects/dice_' + randomNumber + '.png) center';
     player2Score += parseInt(randomNumber);
     player2ScoreEl.textContent = player2Score;
     player2DiceEl.classList.remove('active');
@@ -58,8 +60,8 @@ function resetGame() {
   messageEl.textContent = 'player 1 turn';
   player1ScoreEl.textContent = 0;
   player2ScoreEl.textContent = 0;
-  player1DiceEl.textContent = '-';
-  player2DiceEl.textContent = '-';
+  player1DiceEl.style.background = 'url(assects/dice_1.png) center';
+  player2DiceEl.style.background = 'url(assects/dice_1.png) center';
   player1Score = 0;
   player2Score = 0;
   player1Turn = true;
