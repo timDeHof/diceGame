@@ -12,6 +12,10 @@ const player2DiceEl = document.getElementById('player2Dice');
 const rollBtnEl = document.getElementById('rollBtn');
 const resetBtnEl = document.getElementById('resetBtn');
 
+function showDisplayButton() {
+  rollBtnEl.style.display = 'none';
+  resetBtnEl.style.display = 'block';
+}
 /* Hook up a click event listener to the Roll Dice Button. Log out a random number between 1 and 6. Hint: use Math.floor() and Math.random() */
 rollBtnEl.addEventListener('click', function () {
   const randomNumber = Math.floor(Math.random() * 6) + 1;
@@ -37,13 +41,11 @@ rollBtnEl.addEventListener('click', function () {
   // 1. Check if player has won. If so, change the message to "Player X has won!"
   // 2. hide the roll Dice Button and show the Reset Button. hint: use display none/block
   if (player1Score >= 20) {
-    messageEl.textContent = 'Player 1 has won!';
-    rollBtnEl.style.display = 'none';
-    resetBtnEl.style.display = 'block';
+    messageEl.textContent = 'Player 1 has won! 🥳';
+    showDisplayButton();
   } else if (player2Score >= 20) {
-    messageEl.textContent = 'Player 2 has won!';
-    rollBtnEl.style.display = 'none';
-    resetBtnEl.style.display = 'block';
+    messageEl.textContent = 'Player 2 has won! 🎉';
+    showDisplayButton();
   }
   // switch the turn back to the other player
   if (player1Turn) {
