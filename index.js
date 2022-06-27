@@ -2,6 +2,7 @@
 let player1Score = 0;
 let player2Score = 0;
 let player1Turn = true;
+let currentRandomNumber = 0;
 
 // Create variables to store references to the necessary DOM nodes
 const player1ScoreEl = document.getElementById('player1Scoreboard');
@@ -20,7 +21,7 @@ function showDisplayButton() {
 /* Hook up a click event listener to the Roll Dice Button. Log out a random number between 1 and 6. Hint: use Math.floor() and Math.random() */
 rollBtnEl.addEventListener('click', function () {
   const randomNumber = Math.floor(Math.random() * 6) + 1;
-
+  currentRandomNumber = randomNumber;
   // 1. Update the scores for each player
   // 2. Display the scores in their scoreboards
   if (player1Turn) {
@@ -76,9 +77,4 @@ function resetGame() {
 // 3. Invoke the reset() function when the Reset button is clicked
 resetBtnEl.addEventListener('click', function () {
   resetGame();
-});
-
-function doublePts() {}
-doubleBtnEl.addEventListener('click', function () {
-  doublePts();
 });
