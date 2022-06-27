@@ -54,3 +54,23 @@ rollBtnEl.addEventListener('click', function () {
     player1Turn = true;
   }
 });
+function resetGame() {
+  messageEl.textContent = 'player 1 turn';
+  player1ScoreEl.textContent = 0;
+  player2ScoreEl.textContent = 0;
+  player1DiceEl.textContent = '-';
+  player2DiceEl.textContent = '-';
+  player1Score = 0;
+  player2Score = 0;
+  player1Turn = true;
+  rollBtnEl.style.display = 'block';
+  resetBtnEl.style.display = 'none';
+  player2DiceEl.classList.remove('active');
+  player1DiceEl.classList.add('active');
+}
+// 1. Hook a click event listener up with the Reset button
+// 2. Create a reset() function that resets the game
+// 3. Invoke the reset() function when the Reset button is clicked
+resetBtnEl.addEventListener('click', function () {
+  resetGame();
+});
