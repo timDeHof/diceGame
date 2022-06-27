@@ -34,7 +34,17 @@ rollBtnEl.addEventListener('click', function () {
     player1DiceEl.classList.add('active');
     messageEl.textContent = 'Player 1 Turn';
   }
-
+  // 1. Check if player has won. If so, change the message to "Player X has won!"
+  // 2. hide the roll Dice Button and show the Reset Button. hint: use display none/block
+  if (player1Score >= 20) {
+    messageEl.textContent = 'Player 1 has won!';
+    rollBtnEl.style.display = 'none';
+    resetBtnEl.style.display = 'block';
+  } else if (player2Score >= 20) {
+    messageEl.textContent = 'Player 2 has won!';
+    rollBtnEl.style.display = 'none';
+    resetBtnEl.style.display = 'block';
+  }
   // switch the turn back to the other player
   if (player1Turn) {
     player1Turn = false;
