@@ -1,4 +1,4 @@
-# co41348b68a37e76e1fb057eb
+# Dice Game
 
 Quick start:
 
